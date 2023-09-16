@@ -9,5 +9,7 @@ jobs:
       - name: Setup .Net Core
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: 6.0.0
+          dotnet-version: 6.0.x
+      - name: Install Dependency
+        run: dotnet restore ./Presentation/ETicaretAPI.API/ETicaretAPI.API.csproj
 
