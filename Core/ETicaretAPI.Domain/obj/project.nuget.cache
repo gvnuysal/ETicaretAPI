@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NOCiNnEC4wqgDCXgk/jz4J+MvBEVeTTMamTOL68umYpwW7xSyPlQpeNnTr1z7/K37GyZL/U2LZxcNpfhM8dfNw==",
+  "dgSpecHash": "wDhe9RiG9OdBq+MiAMQiZVMVfbZ03CCMwa1c4BeArEqIlSz850i5X2fen2uBLUPWc/sX0UeayocgH3XWA4cvNg==",
   "success": true,
-  "projectFilePath": "D:\\projects\\ETicaretAPI\\Core\\ETicaretAPI.Domain\\ETicaretAPI.Domain.csproj",
+  "projectFilePath": "D:\\projects\\GvnSoftware\\ETicaretAPI\\Core\\ETicaretAPI.Domain\\ETicaretAPI.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
