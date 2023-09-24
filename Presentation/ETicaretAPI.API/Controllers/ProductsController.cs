@@ -25,35 +25,14 @@ namespace ETicaretAPI.API.Controllers
             _customerReadRepository = customerReadRepository;
         }
         [HttpGet]
-        public async Task Get()
+        public async Task<IActionResult> Get()
         {
-            var customer=await _customerReadRepository.GetSingleAsync(x => x.Id == Guid.Parse("e0208e07-639d-47e7-87c5-73ebb9d5d8a4"));
-            customer.Name = "Customer 2";
-            _customerWriteRepository.Update(customer);
-            await _customerWriteRepository.AddAsync(new()
-            {
-                Name="Customer 1q"
-            });
-            await _productWriteRepository.AddRangeAsync(new()
-                                                 { new()
-                                                 {   
-                                                     Name = "Laptop 1",
-                                                     Price = 124,
-                                                     Stock = 14
-                                                 },
-                                                 new()
-                                                 {  
-                                                     Name = "Laptop 2",
-                                                     Price = 1245,
-                                                     Stock = 1
-                                                 }
-            });
-            var count=await _productWriteRepository.SaveChanges();
+            return Ok("Merhaba");
         }
         [HttpGet("{id}")]
         public async Task Get(string id)
         {
-            var product=await _productReadRepository.GetSingleAsync(x=>x.Id==Guid.Parse(id));
+            var product = await _productReadRepository.GetSingleAsync(x => x.Id == Guid.Parse(id));
         }
 
     }
