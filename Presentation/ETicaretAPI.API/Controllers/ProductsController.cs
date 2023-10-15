@@ -1,7 +1,4 @@
-﻿using ETicaretAPI.Application.Abstractions.Products;
-using ETicaretAPI.Application.Repositories.Customers;
-using ETicaretAPI.Application.Repositories.Products;
-using ETicaretAPI.Domain.Entities.Products;
+﻿using ETicaretAPI.Application.Repositories.Products;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ETicaretAPI.API.Controllers
@@ -10,30 +7,13 @@ namespace ETicaretAPI.API.Controllers
     [ApiController]
     public class ProductsController : ControllerBase
     {
-        private readonly IProductService _productService;
         private readonly IProductWriteRepository _productWriteRepository;
         private readonly IProductReadRepository _productReadRepository;
-        private readonly ICustomerWriteRepository _customerWriteRepository;
-        private readonly ICustomerReadRepository _customerReadRepository;
 
-        public ProductsController(IProductService productService, IProductWriteRepository productWriteRepository, IProductReadRepository productReadRepository, ICustomerWriteRepository customerWriteRepository, ICustomerReadRepository customerReadRepository)
+        public ProductsController(IProductWriteRepository productWriteRepository, IProductReadRepository productReadRepository)
         {
-            _productService = productService;
             _productWriteRepository = productWriteRepository;
             _productReadRepository = productReadRepository;
-            _customerWriteRepository = customerWriteRepository;
-            _customerReadRepository = customerReadRepository;
         }
-        [HttpGet]
-        public async Task<IActionResult> Get()
-        {
-            return Ok("Merhaba");
-        }
-        [HttpGet("{id}")]
-        public async Task Get(string id)
-        {
-            var product = await _productReadRepository.GetSingleAsync(x => x.Id == Guid.Parse(id));
-        }
-
     }
 }
