@@ -1,5 +1,10 @@
 using ETicaretAPI.Persistence;
 
+IHostBuilder CreateHostBuider(string[] args) => Host.CreateDefaultBuilder(args).ConfigureWebHostDefaults(webBuilder =>
+{
+    webBuilder.UseUrls("http://:1000");
+});
+
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddPersistenceService();
 // Add services to the container.
