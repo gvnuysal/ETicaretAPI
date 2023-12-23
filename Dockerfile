@@ -22,6 +22,6 @@ ARG BUILD_CONFIGURATION=Release
 RUN dotnet publish "./ETicaretAPI.API.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
-WORKDIR /app
+WORKDIR /src
 COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "ETicaretAPI.API.dll"]
