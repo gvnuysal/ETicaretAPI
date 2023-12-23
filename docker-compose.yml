@@ -1,8 +1,0 @@
-version: '3.4'
-
-services:
-  eticaretapi.api:
-    image: ${DOCKER_REGISTRY-}eticaretapiapi
-    build:
-      context: .
-      dockerfile: Presentation/ETicaretAPI.API/Dockerfile
