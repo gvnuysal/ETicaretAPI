@@ -16,7 +16,7 @@ namespace ETicaretAPI.Domain.Entities.Products
         /// <summary>
         /// Price of product
         /// </summary>
-        public long Price { get; set; }
+        public decimal Price { get; set; }
         public ICollection<Order> Orders { get; set; }
     }
 }
