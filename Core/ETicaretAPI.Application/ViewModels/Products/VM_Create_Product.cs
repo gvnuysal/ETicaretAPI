@@ -10,7 +10,7 @@ namespace ETicaretAPI.Application.ViewModels.Products
         /// <summary>
         /// Stock Name
         /// </summary>
-        public string Name { get; set; }
+        public string? Name { get; set; }
         /// <summary>
         /// Stock quantity in warehouse
         /// </summary>
