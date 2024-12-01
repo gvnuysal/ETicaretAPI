@@ -3,11 +3,11 @@ using FluentValidation;
 
 namespace ETicaretAPI.Application.Validators.Products
 {
-    public class CreateProductValidator:AbstractValidator<VM_Create_Product>
+    public class CreateProductValidator : AbstractValidator<VM_Create_Product>
     {
         public CreateProductValidator()
         {
-            RuleFor(c=>c.Name).NotEmpty()
+            RuleFor(c => c.Name).NotEmpty()
                               .NotNull()
                               .WithMessage("Lütfen ürün adını giriniz.")
                               .MaximumLength(150)
